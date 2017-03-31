@@ -16,7 +16,8 @@ const
   crypto = require('crypto'),
   express = require('express'),
   https = require('https'),  
-  request = require('request');
+  request = require('request'),
+  content = require('./content.json');
 
 var app = express();
 app.set('port', process.env.PORT || 5000);
@@ -832,6 +833,8 @@ function callSendAPI(messageData) {
 // certificate authority.
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
+  console.log('content var:');
+  console.log(content);
 });
 
 module.exports = app;
