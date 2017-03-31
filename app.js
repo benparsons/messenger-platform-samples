@@ -308,6 +308,10 @@ function receivedMessage(event) {
         sendAccountLinking(senderID);
         break;
 
+      case 'start':
+        sendStart(senderID);
+        break;
+
       default:
         sendTextMessage(senderID, messageText);
     }
@@ -794,6 +798,37 @@ function sendAccountLinking(recipientId) {
       }
     }
   };  
+
+  callSendAPI(messageData);
+}
+
+
+function sendStart(recipientId) {
+  sendStateAsButton(recipientId, 1);
+}
+
+function sendStateAsButton(recipientId, stateIndex) {
+    console.log('sendStateAsButton: ' + stateIndex);
+    console.log(content[stateIndex]);
+    var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      attachment: {
+        type: "template",
+        payload: {
+          template_type: "button",
+          text: "This is test text",
+          buttons:[{
+            type: "postback",
+            title: "Trigger Postback",
+            payload: "DEVELOPER_DEFINED_PAYLOAD"
+          }]
+        }
+      }
+    }
+  };
 
   callSendAPI(messageData);
 }
