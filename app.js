@@ -808,9 +808,10 @@ function sendStart(recipientId) {
 }
 
 function sendStateAsButton(recipientId, stateIndex) {
-    console.log('sendStateAsButton: ' + stateIndex);
-    console.log(content[stateIndex]);
-    var messageData = {
+  console.log('sendStateAsButton: ' + stateIndex);
+  console.log(content[stateIndex]);
+  var stateContent = content[stateIndex];
+  var messageData = {
     recipient: {
       id: recipientId
     },
@@ -819,7 +820,7 @@ function sendStateAsButton(recipientId, stateIndex) {
         type: "template",
         payload: {
           template_type: "button",
-          text: "This is test text",
+          text: stateContent.text,
           buttons:[{
             type: "postback",
             title: "Trigger Postback",
@@ -829,6 +830,15 @@ function sendStateAsButton(recipientId, stateIndex) {
       }
     }
   };
+
+  for (var i in stateContent.responses) {
+    messageData.message.attachment.payload.buttons.push(
+      {
+        type: "postback",
+        title: stateContent.responses[i].text,
+        payload: stateContent.responses[i].link
+      });
+  }
 
   callSendAPI(messageData);
 }
