@@ -369,6 +369,10 @@ function receivedPostback(event) {
   // When a postback is called, we'll send a message back to the sender to 
   // let them know it was successful
   sendTextMessage(senderID, "Postback called: " + payload);
+  if (content[stateIndex].image) {
+    sendImageMessage(recipientId, content[stateIndex].image);
+  }
+
   sendStateAsButton(senderID, payload);
 }
 
@@ -812,10 +816,6 @@ function sendStateAsButton(recipientId, stateIndex) {
   console.log('sendStateAsButton: ' + stateIndex);
   console.log(content[stateIndex]);
   var stateContent = content[stateIndex];
-
-  if (stateContent.image) {
-    sendImageMessage(recipientId, stateContent.image);
-  }
 
   var messageData = {
     recipient: {
