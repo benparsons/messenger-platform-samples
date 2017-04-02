@@ -35,7 +35,7 @@
   {"text":"But who is this?", "link": 9}
 ]},
 {"_": 9, "text": "You run into the murderer", "responses": [
-  {"text":"Nothing happens, you leave", "link": 9}
+  {"text":"Nothing happens, leave", "link": 10}
 ]},
 {"_": 10, "text": "The End", "responses": []}
 ]
