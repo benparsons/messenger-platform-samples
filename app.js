@@ -369,7 +369,7 @@ function receivedPostback(event) {
   // When a postback is called, we'll send a message back to the sender to 
   // let them know it was successful
   sendTextMessage(senderID, "Postback called: " + payload);
-  sendStateAsButton(senderID, parseInt(payload, 10));
+  sendStateAsButton(senderID, payload);
 }
 
 /*
