@@ -49,5 +49,5 @@
 {"_": 9, "text": "You run into the murderer", "responses": [
   {"text":"Nothing happens, you leave", "link": 9}
 ]},
-{"_": 10, "text": "The End", "responses": []},
+{"_": 10, "text": "The End", "responses": []}
 ]
