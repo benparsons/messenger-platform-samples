@@ -5,32 +5,27 @@
   {"text":"go to guest 1", "link": 3},
   {"text":"go to guest 2", "link": 4},
   {"text":"go to guest 3", "link": 5},
-  {"text":"go to guest 4", "link": 6},
-  {"text":"go to victim", "link": 7}
+  {"text":"go to guest 4", "link": 6}
 ]},
 {"_": 3, "text": "Guest 1", "responses": [
   {"text":"go to guest 2", "link": 4},
   {"text":"go to guest 3", "link": 5},
-  {"text":"go to guest 4", "link": 6},
   {"text":"go to victim", "link": 7},
   {"text":"Leave", "link": 8}
 ]},
 {"_": 4, "text": "Guest 2", "responses": [
   {"text":"go to guest 1", "link": 3},
-  {"text":"go to guest 3", "link": 5},
   {"text":"go to guest 4", "link": 6},
   {"text":"go to victim", "link": 7},
   {"text":"Leave", "link": 8}
 ]},
 {"_": 5, "text": "Guest 3", "responses": [
   {"text":"go to guest 1", "link": 3},
-  {"text":"go to guest 2", "link": 4},
   {"text":"go to guest 4", "link": 6},
   {"text":"go to victim", "link": 7},
   {"text":"Leave", "link": 8}
 ]},
 {"_": 6, "text": "Guest 4", "responses": [
-  {"text":"go to guest 1", "link": 3},
   {"text":"go to guest 2", "link": 4},
   {"text":"go to guest 3", "link": 5},
   {"text":"go to victim", "link": 7},
