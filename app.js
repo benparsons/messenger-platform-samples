@@ -414,7 +414,7 @@ function receivedAccountLink(event) {
  * Send an image using the Send API.
  *
  */
-function sendImageMessage(recipientId) {
+function sendImageMessage(recipientId, filename) {
   var messageData = {
     recipient: {
       id: recipientId
@@ -423,7 +423,7 @@ function sendImageMessage(recipientId) {
       attachment: {
         type: "image",
         payload: {
-          url: SERVER_URL + "/assets/rift.png"
+          url: SERVER_URL + "/assets/" + filename
         }
       }
     }
@@ -812,6 +812,11 @@ function sendStateAsButton(recipientId, stateIndex) {
   console.log('sendStateAsButton: ' + stateIndex);
   console.log(content[stateIndex]);
   var stateContent = content[stateIndex];
+
+  if (stateContent.image) {
+    sendImageMessage(recipientId, stateContent.image);
+  }
+
   var messageData = {
     recipient: {
       id: recipientId
