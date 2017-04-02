@@ -17,7 +17,7 @@ const
   express = require('express'),
   https = require('https'),  
   request = require('request'),
-  content = require('./content.json');
+  content = require('./murdermystery.json');
 
 var app = express();
 app.set('port', process.env.PORT || 5000);
@@ -822,11 +822,7 @@ function sendStateAsButton(recipientId, stateIndex) {
         payload: {
           template_type: "button",
           text: stateContent.text,
-          buttons:[{
-            type: "postback",
-            title: "Trigger Postback",
-            payload: "DEVELOPER_DEFINED_PAYLOAD"
-          }]
+          buttons:[]
         }
       }
     }
