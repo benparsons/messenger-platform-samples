@@ -1,0 +1,4 @@
+{
+  "start": {"text": "Start", "responses": [{"text":"go to murder scene", "link": "murderscene"}]},
+  "murderscene":  {"text": "murder scene text", "responses": [{"text":"go to murder scene", "link": "murderscene"}]}
+}
