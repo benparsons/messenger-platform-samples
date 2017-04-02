@@ -805,7 +805,7 @@ function sendAccountLinking(recipientId) {
 
 
 function sendStart(recipientId) {
-  sendStateAsButton(recipientId, 1);
+  sendStateAsButton(recipientId, "start");
 }
 
 function sendStateAsButton(recipientId, stateIndex) {
