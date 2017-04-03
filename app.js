@@ -370,7 +370,7 @@ function receivedPostback(event) {
   // let them know it was successful
   sendTextMessage(senderID, "Postback called: " + payload);
   if (content[payload].image) {
-    sendImageMessage(recipientId, content[payload].image);
+    sendImageMessage(senderID, content[payload].image);
   }
 
   sendStateAsButton(senderID, payload);
