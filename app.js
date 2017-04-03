@@ -710,6 +710,7 @@ function sendQuickReply(recipientId) {
         {
           "content_type":"text",
           "title":"Action",
+          "image_url": "assets/rift.png",
           "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_ACTION"
         },
         {
